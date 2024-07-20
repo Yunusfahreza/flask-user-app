@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>User List</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Username</th>
+    </tr>
+    {% for user in users %}
+    <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.username }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="{{ url_for('main.logout') }}">Logout</a>
+{% endblock %}
